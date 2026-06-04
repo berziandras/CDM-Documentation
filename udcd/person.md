@@ -1,5 +1,6 @@
 ---
 title: Person
+layout: default
 parent: UDCD
 nav_order: 1
 ---
