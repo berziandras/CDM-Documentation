@@ -13,7 +13,7 @@ The patients in the CDM are restricted to the subset of all UDMEDSOL patients wh
 
 |     Destination Field    |     Source field     | Logic | Comment field |
 |:------------------------:|:--------------------:|:--------:| |
-| person_id                |                      | GENERATED ALWAYS AS IDENTITY | |
+| person_id                |                      | `GENERATED ALWAYS AS IDENTITY` | |
 | gender_concept_id        | sex                  | Map: 'M' → 8507; 'F' → 8532; ELSE → 0 | |
 | year_of_birth            | year_of_birth        | | |
 | month_of_birth           |                      | | |

@@ -20,14 +20,14 @@ Joins to the visit_occurrence table on `person_id` and `admittance_datetime` to 
 
 |        Destination Field       |     Source field     | Logic | Comment field |
 |:------------------------------:|:--------------------:|:--------:| |
-| visit_detail_id                |                      | GENERATED ALWAYS AS IDENTITY | |
+| visit_detail_id                |                      | `GENERATED ALWAYS AS IDENTITY` | |
 | person_id                      | patient_id           | JOIN person table ON person.person_source_value = medical_case.patient_id | |
 | visit_detail_concept_id        | case_type            | Map: 'IP' → 9201; 'OP' → 9202; 'CURE' → 8756; 'ERIP' → 262; 'ER' → 9203; 'INT' → 32037; ELSE → 0 | |
 | visit_detail_start_date        | admittance_date      | | |
 | visit_detail_start_datetime    | admittance_datetime  | | |
 | visit_detail_end_date          | discharge_date       | `admittance_date` is used for outpatients (`patient_type = 'O'`) | |
 | visit_detail_end_datetime      | discharge_datetime   | `admittance_datetime` is used for outpatients (`patient_type = 'O'`) | |
-| visit_detail_type_concept_id   |                      | 32817 | |
+| visit_detail_type_concept_id   |                      | Use 32817 - EHR | |
 | provider_id                    |                      | | |
 | care_site_id                   | care_site_id         | care_site_id from visit_occurrence table | |
 | visit_detail_source_value      | case_type            | | |

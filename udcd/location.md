@@ -11,7 +11,7 @@ nav_order: 3
 
 |        Destination Field      |     Source field     | Logic | Comment field |
 |:-----------------------------:|:--------------------:|:--------:| |
-| location_id                   |                      | GENERATED ALWAYS AS IDENTITY | |
+| location_id                   |                      | `GENERATED ALWAYS AS IDENTITY` | |
 | address_1                     |                      | | |
 | address_2                     |                      | | |
 | city                          |                      | | |

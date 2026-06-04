@@ -11,7 +11,7 @@ nav_order: 2
 
 |        Destination Field      |     Source field     | Logic | Comment field |
 |:-----------------------------:|:--------------------:|:--------:| |
-| care_site_id                  |                      | GENERATED ALWAYS AS IDENTITY | |
+| care_site_id                  |                      | `GENERATED ALWAYS AS IDENTITY` | |
 | care_site_name                | description          | DISTINCT description | |
 | place_of_service_concept_id   | department_type_code | Map: 'O' → 9202; ('I', C') → 9201; ELSE → 0 | |
 | location_id                   | location.location_id | | |
