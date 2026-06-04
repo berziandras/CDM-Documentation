@@ -2,7 +2,7 @@
 title: Visit detail
 layout: default
 parent: UDCD
-nav_order: 5
+nav_order: 6
 ---
 
 # CDM Table name: VISIT_DETAIL
