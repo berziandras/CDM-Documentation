@@ -5,4 +5,4 @@ nav_order: 2
 has_children: true
 ---
 
-# University of Debrecen clinical database ETL Documentation
+# University of Debrecen Clinical Database ETL Documentation

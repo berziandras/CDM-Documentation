@@ -1,13 +1,13 @@
 ---
-title: Person
+title: Patient
 layout: default
-parent: UDCD
+parent: UDMEDSOL
 nav_order: 1
 ---
 
-# CDM Table name: PERSON
+# Table name: PATIENT
 
-## Reading from UDMEDSOL.Patient
+## Reading from MEDSOL.Patient and UDMED.Patient
 
 The patients in the CDM are restricted to the subset of all UDMEDSOL patients who have at least one recorded case. Patients without at least one record in the `medical_case` table are excluded from the CDM. 
 

@@ -4,9 +4,14 @@ layout: home
 nav_order: 1
 ---
 
-# University of Debrecen CDM Documentation
+# UDBD-HEALTH Documentation
 
 This guide is meant to show the process by which data licensed by Johnson & Johnson was converted to the [OMOP Common Data Model](https://ohdsi.github.io/CommonDataModel/).
+
+- [UDMEDSOL](udmedsol/index.md)
+- [University of Debrecen Clinical Database (UDCD)](udcd/index.md)
+
+
 
 This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
