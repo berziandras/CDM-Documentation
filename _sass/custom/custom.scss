@@ -1,5 +1,19 @@
 $link-color: #28a745;
-$btn-primary-color: #28a745;
 $nav-child-link-color: #28a745;
-$body-heading-color: #28a745;
-$base-button-color: #28a745;
+$sidebar-color: #28a745;
+
+// Active nav item highlight
+.nav-list-item .nav-list-link.active {
+  color: #28a745 !important;
+  font-weight: bold;
+}
+
+// All links
+a {
+  color: #28a745 !important;
+}
+
+// Sidebar nav links
+.nav-list-link {
+  color: #28a745 !important;
+}
