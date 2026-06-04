@@ -7,6 +7,7 @@ nav_order: 1
 # CDM Table name: PERSON
 
 ## Reading from UDMEDSOL.Patient
+
 The patients in the CDM are restricted to the subset of all UDMEDSOL patients who have at least one recorded case. Patients without at least one record in the `medical_case` table are excluded from the CDM. 
 
 | Destination Field        | Source field         | Logic |
