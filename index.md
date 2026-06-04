@@ -8,8 +8,8 @@ nav_order: 1
 
 This guide is meant to show the process by which data licensed by Johnson & Johnson was converted to the [OMOP Common Data Model](https://ohdsi.github.io/CommonDataModel/).
 
-- [UDMEDSOL](udmedsol/index.md)
-- [University of Debrecen Clinical Database (UDCD)](udcd/index.md)
+- [UDMEDSOL](./udmedsol/index.md)
+- [University of Debrecen Clinical Database (UDCD)](./udcd/index.md)
 
 
 
