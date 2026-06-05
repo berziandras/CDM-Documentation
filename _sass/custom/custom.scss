@@ -18,11 +18,21 @@ a {
   color: #1e6e3d !important;
 }
 
-.main {
-  margin-left: 0 !important;
+.side-bar {
+  width: 248px !important;
+  min-width: 0 !important;
 }
 
 .main-content-wrap {
-  max-width: 100% !important;
-  padding-left: 2rem !important;
+  margin-left: 248px !important;
+}
+
+@media (min-width: 50rem) {
+  .side-bar {
+    width: 248px !important;
+  }
+  
+  .main {
+    margin-left: 248px !important;
+  }
 }
