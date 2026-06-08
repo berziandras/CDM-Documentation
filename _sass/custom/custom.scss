@@ -66,7 +66,9 @@ a:active {
 }
 
 .main-content-wrap {
-  max-width: 800px;
+  width: calc(100vw - 260px) !important; // sidebar width
+  max-width: none !important;
+  margin: 0 !important;
 }
 
 .main-content {
