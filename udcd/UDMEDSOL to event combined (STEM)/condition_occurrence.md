@@ -13,7 +13,7 @@ The `EVENT_COMBINED` (`STEM`) table is a staging area where UDMEDSOL source code
 
 Filters out records where `diagnosis_date` falls after the last recorded `admittance_date` in the source `medical_case` table. This ensures that no diagnoses outside the export period are included in the output.
 
-![](./md_files/image1.png)
+![](../md_files/image1.png)
 
 |        Destination Field      |         Source field        | Logic | Comment field |
 |:-----------------------------:|:---------------------------:|:-----:|:-------------:|

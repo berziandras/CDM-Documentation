@@ -13,7 +13,7 @@ The `EVENT_COMBINED` (`STEM`) table is a staging area where UDMEDSOL source code
 
 Excludes magistral (compounded) preparations by filtering out records where `medication_code_source_value` is `0`, as these do not have a standard medication code and cannot be mapped to a concept.
 
-![](md_files/image3.png)
+![](../md_files/image3.png)
 
 |        Destination Field      |         Source field        | Logic | Comment field |
 |:-----------------------------:|:---------------------------:|:-----:|:-------------:|
