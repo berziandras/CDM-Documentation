@@ -46,9 +46,11 @@ a:active {
 }
 
 .main-content-wrap {
-  width: calc(100vw - 260px) !important; // sidebar width
+  width: calc(100vw - 260px) !important;
   max-width: none !important;
-  margin: 0 !important;
+  margin-left: 260px !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
 }
 
 .main-content {
