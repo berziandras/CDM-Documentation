@@ -29,10 +29,16 @@ a {
   min-width: 0 !important;
 }
 
-.main-content {
-  max-width: 100% !important;
+.main {
+  max-width: none !important;
 }
 
 .main-content-wrap {
-  max-width: 100% !important;
+  max-width: none !important;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.main-content {
+  max-width: none !important;
 }
