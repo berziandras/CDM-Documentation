@@ -9,9 +9,7 @@ nav_order: 2
 
 ## Reading from UDMEDSOL.department_info
 
-<p align="center">
-    ![](md_files/image17.png)
-</p>
+![](md_files/image17.png)
 
 |        Destination Field      |     Source field     | Logic | Comment field |
 |:-----------------------------:|:--------------------:|:--------:| |
