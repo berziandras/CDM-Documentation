@@ -9,6 +9,8 @@ nav_order: 2
 
 ## Reading from UDMEDSOL.department_info
 
+![](md_files/image17.png)
+
 |        Destination Field      |     Source field     | Logic | Comment field |
 |:-----------------------------:|:--------------------:|:--------:| |
 | care_site_id                  |                      | `GENERATED ALWAYS AS IDENTITY` | |
