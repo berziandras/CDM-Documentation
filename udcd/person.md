@@ -9,7 +9,9 @@ nav_order: 1
 
 ## Reading from UDMEDSOL.patient
 
-The patients in the CDM are restricted to the subset of all UDMEDSOL patients who have at least one recorded case. Patients without at least one record in the `medical_case` table are excluded from the CDM. 
+The patients in the CDM are restricted to the subset of all UDMEDSOL patients who have at least one recorded case. Patients without at least one record in the `medical_case` table are excluded from the CDM.
+
+![](md_files/image5.png)
 
 |     Destination Field    |     Source field     | Logic | Comment field |
 |:------------------------:|:--------------------:|:--------:| |
@@ -21,7 +23,7 @@ The patients in the CDM are restricted to the subset of all UDMEDSOL patients wh
 | birth_datetime           |                      | | |
 | race_concept_id          |                      | 0 | |
 | ethnicity_concept_id     |                      | 0 | |
-| location_id              | location.location_id | | |
+| location_id              | zip                  | location.location_id | |
 | provider_id              |                      | | |
 | care_site_id             |                      | | |
 | person_source_value      | patient_id           | | |

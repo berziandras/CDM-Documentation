@@ -13,18 +13,20 @@ The `EVENT_COMBINED` (`STEM`) table is a staging area where UDMEDSOL source code
 
 Filters out records where `diagnosis_date` falls after the last recorded `admittance_date` in the source `medical_case` table. This ensures that no diagnoses outside the export period are included in the output.
 
+![](md_files/image1.png)
+
 |        Destination Field      |         Source field        | Logic | Comment field |
 |:-----------------------------:|:---------------------------:|:-----:|:-------------:|
 | id                            |                             | `GENERATED ALWAYS AS IDENTITY` | |
-| person_id                     | visit_detail.person_id      | JOIN visit_detail table ON diagnosis.case_id = visit_detail.visit_id_source_value | |
-| concept_id                    | bno_mappings.concept_id     | `COALESCE(concept_id, 0)`, LEFT JOIN bno_mappings table ON diagnosis.diagnosis_code = bno_mappings.source_code | |
+| person_id                     | patient_id                  | JOIN visit_detail table ON diagnosis.case_id = visit_detail.visit_id_source_value | |
+| concept_id                    | diagnosis_code              | `COALESCE(concept_id, 0)`, LEFT JOIN bno_mappings table ON diagnosis.diagnosis_code = bno_mappings.source_code | |
 | type_concept_id               |                             | Use 32817 - EHR | |
 | start_datetime                | visit_detail_start_datetime | FROM visit_detail | |
 | end_datetime                  |                             |       | |
 | visit_occurrence_id           | visit_occurrence_id         | FROM visit_detail | |
 | visit_detail_id               | visit_detail_id             | FROM visit_detail | |
 | provider_id                   |                             |       | |
-| source_value                  | diagnosis_code              |       | |
+| source_value                  |                             |       | |
 | source_concept_id             |                             |       | |
 | quantity                      |                             |       | |
 | unit_concept_id               |                             |       | |
@@ -53,7 +55,7 @@ Filters out records where `diagnosis_date` falls after the last recorded `admitt
 | condition_status_concept_id   | diagnosis_type              | Map: '0' → 32905; '1' → 32893; '2' → 32903; '3' → 32890; ('4', '5', 'P') → 32908; '6' → 32911; '7' → 32895; '8' → 32897; ('9', 'A') → 32894; 'B' → 32891; ('C', 'D') → 32898; 'E' → 32907; 'R' → 32902; ('V', 'Z') → 32901; ELSE → 0 | |
 | condition_status_source_value | diagnosis_type              |       | |
 | operator_concept_id           |                             |       | |
-| value_source_value            |                             |       | |
+| value_source_value            | diagnosis_code              |       | |
 | range_low                     |                             |       | |
 | range_high                    |                             |       | |
 | qualifier_concept_id          |                             |       | |

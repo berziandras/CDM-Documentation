@@ -13,11 +13,13 @@ The `EVENT_COMBINED` (`STEM`) table is a staging area where UDMEDSOL source code
 
 Filters out records where `examination_date` falls after the last recorded `admittance_date` in the source `medical_case` table. This ensures that no measurements outside the export period are included in the output.
 
+![](md_files/image2.png)
+
 |        Destination Field      |         Source field        | Logic | Comment field |
 |:-----------------------------:|:---------------------------:|:-----:|:-------------:|
 | id                            |                             | `GENERATED ALWAYS AS IDENTITY` | |
-| person_id                     | visit_detail.person_id      | JOIN visit_detail table ON measurement.case_id = visit_detail.visit_id_source_value | |
-| concept_id                    | concept                     | `COALESCE(concept_id, 0)`, LEFT JOIN concept table ON measurement.loinc_id = concept.concept_code | |
+| person_id                     | patient_id                  | JOIN visit_detail table ON measurement.case_id = visit_detail.visit_id_source_value | |
+| concept_id                    | loinc_id                    | `COALESCE(concept_id, 0)`, LEFT JOIN concept table ON measurement.loinc_id = concept.concept_code | |
 | type_concept_id               |                             | Use 32817 - EHR  | |
 | start_datetime                | examination_date            | `to_timestamp()` | |
 | end_datetime                  |                             |                  | |
@@ -27,11 +29,11 @@ Filters out records where `examination_date` falls after the last recorded `admi
 | source_value                  | mrkeyword                   |       | |
 | source_concept_id             |                             |       | |
 | quantity                      |                             |       | |
-| unit_concept_id               | unit_concept_id             | `COALESCE(unit_concept_id, 0)` | |
+| unit_concept_id               | unit                        | `COALESCE(unit_concept_id, 0)` | |
 | unit_source_value             | unit                        |       | |
 | unit_source_concept_id        |                             |       | |
-| value_as_number               | value_as_number             | WHEN data_type = 'NUM' THEN TRY_CAST(observation AS DOUBLE), ELSE NULL | |
-| value_as_concept_id           | value_as_concept_id         | Map: '%poz%' → 45884084; '%neg%' → 45878583; ELSE → NULL | |
+| value_as_number               | observation                 | WHEN data_type = 'NUM' THEN TRY_CAST(observation AS DOUBLE), ELSE NULL | |
+| value_as_concept_id           | observation                 | Map: '%poz%' → 45884084; '%neg%' → 45878583; ELSE → NULL | |
 | value_as_string               |                             |       | |
 | specimen_source_id            |                             |       | |
 | anatomic_site_concept_id      |                             |       | |

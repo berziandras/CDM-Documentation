@@ -11,6 +11,8 @@ nav_order: 7
 
 Filters records to only those where the patient died (`discharge_type = '4'`) and has a recorded `discharge_date`. This ensures that only valid, completed death cases are included.
 
+![](md_files/image14.png)
+
 |        Destination Field      |     Source field     | Logic | Comment field |
 |:-----------------------------:|:--------------------:|:--------:| |
 | person_id                     | patient_id           | JOIN person table ON person.person_source_value = medical_case.patient_id | |

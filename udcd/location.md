@@ -9,6 +9,8 @@ nav_order: 3
 
 ## Reading from UDMEDSOL.patient
 
+![](md_files/image16.png)
+
 |        Destination Field      |     Source field     | Logic | Comment field |
 |:-----------------------------:|:--------------------:|:--------:| |
 | location_id                   |                      | `GENERATED ALWAYS AS IDENTITY` | |

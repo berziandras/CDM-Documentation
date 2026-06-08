@@ -13,18 +13,20 @@ The `EVENT_COMBINED` (`STEM`) table is a staging area where UDMEDSOL source code
 
 Excludes magistral (compounded) preparations by filtering out records where `medication_code_source_value` is `0`, as these do not have a standard medication code and cannot be mapped to a concept.
 
+![](md_files/image3.png)
+
 |        Destination Field      |         Source field        | Logic | Comment field |
 |:-----------------------------:|:---------------------------:|:-----:|:-------------:|
 | id                            |                             | `GENERATED ALWAYS AS IDENTITY` | |
-| person_id                     | visit_detail.person_id      | JOIN visit_detail table ON medication.case_id = visit_detail.visit_id_source_value | |
-| concept_id                    | ttt_mappings.concept_id     | `COALESCE(concept_id, 0)`, LEFT JOIN ttt_mappings table ON medication.ttt_code = ttt_mappings.source_code | |
+| person_id                     | patient_id                  | JOIN visit_detail table ON medication.case_id = visit_detail.visit_id_source_value | |
+| concept_id                    | ttt_code                    | `COALESCE(concept_id, 0)`, LEFT JOIN ttt_mappings table ON medication.ttt_code = ttt_mappings.source_code | |
 | type_concept_id               |                             | Use 32817 - EHR  | |
 | start_datetime                | from_date                   | `to_timestamp()` | |
 | end_datetime                  | last_date                   | WHEN days_supply > 365 THEN from_date + 29 DAYS, WHEN days_supply < 1 THEN from_date + 1 DAY, ELSE to_timestamp(last_date)      | |
 | visit_occurrence_id           | visit_occurrence_id         | FROM visit_detail | |
 | visit_detail_id               | visit_detail_id             | FROM visit_detail | |
 | provider_id                   |                             |       | |
-| source_value                  | ttt_code                    |       | |
+| source_value                  |                             |       | |
 | source_concept_id             |                             |       | |
 | quantity                      |                             |       | |
 | unit_concept_id               |                             |       | |
@@ -53,7 +55,7 @@ Excludes magistral (compounded) preparations by filtering out records where `med
 | condition_status_concept_id   |                             |       | |
 | condition_status_source_value |                             |       | |
 | operator_concept_id           |                             |       | |
-| value_source_value            |                             |       | |
+| value_source_value            | ttt_code                    |       | |
 | range_low                     |                             |       | |
 | range_high                    |                             |       | |
 | qualifier_concept_id          |                             |       | |

@@ -13,18 +13,20 @@ The `EVENT_COMBINED` (`STEM`) table is a staging area where UDMEDSOL source code
 
 Filters out records where `treatment_date` falls after the last recorded `admittance_date` in the source `medical_case` table. This ensures that no treatments outside the export period are included in the output.
 
+![](md_files/image4.png)
+
 |        Destination Field      |         Source field        | Logic | Comment field |
 |:-----------------------------:|:---------------------------:|:-----:|:-------------:|
 | id                            |                             | `GENERATED ALWAYS AS IDENTITY` | |
-| person_id                     | visit_detail.person_id      | JOIN visit_detail table ON treatment.case_id = visit_detail.visit_id_source_value | |
-| concept_id                    | oeno_mappings.concept_id    | `COALESCE(concept_id, 0)`, LEFT JOIN oeno_mappings table ON treatment.oeno_code = oeno_mappings.source_code | |
+| person_id                     | patient_id                  | JOIN visit_detail table ON treatment.case_id = visit_detail.visit_id_source_value | |
+| concept_id                    | oeno_code                   | `COALESCE(concept_id, 0)`, LEFT JOIN oeno_mappings table ON treatment.oeno_code = oeno_mappings.source_code | |
 | type_concept_id               |                             | Use 32817 - EHR | |
 | start_datetime                | treatment_date              | treatment_date IF YEAR(treatment_date) BETWEEN 2000 AND CURRENT YEAR, ELSE visit_detail_start_datetime | |
 | end_datetime                  |                             |       | |
 | visit_occurrence_id           | visit_occurrence_id         | FROM visit_detail | |
 | visit_detail_id               | visit_detail_id             | FROM visit_detail | |
 | provider_id                   |                             |       | |
-| source_value                  | oeno_code                   |       | |
+| source_value                  |                             |       | |
 | source_concept_id             |                             |       | |
 | quantity                      | quantity                    |       | |
 | unit_concept_id               |                             |       | |
@@ -53,7 +55,7 @@ Filters out records where `treatment_date` falls after the last recorded `admitt
 | condition_status_concept_id   |                             |       | |
 | condition_status_source_value |                             |       | |
 | operator_concept_id           |                             |       | |
-| value_source_value            |                             |       | |
+| value_source_value            | oeno_code                   |       | |
 | range_low                     |                             |       | |
 | range_high                    |                             |       | |
 | qualifier_concept_id          |                             |       | |
