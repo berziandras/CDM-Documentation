@@ -20,7 +20,11 @@ a {
 
 // Override any visited/default purple link color
 a:link,
-a:visited,
+a:visited {
+  color: #aaaaaa !important;
+  text-decoration-color: #aaaaaa!important;
+  opacity: 1;
+}
 a:hover,
 a:active {
   color: #1e6e3d !important;
