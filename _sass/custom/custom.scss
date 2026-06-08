@@ -39,6 +39,22 @@ a:active {
 
 .anchor-heading {
   color: #1e6e3d !important;
+  text-decoration-color: #1e6e3d !important;
+}
+
+.anchor-heading a,
+.anchor-heading a:link,
+.anchor-heading a:visited,
+.anchor-heading a:hover,
+.anchor-heading a:active {
+  color: #1e6e3d !important;
+  text-decoration-color: #1e6e3d !important;
+}
+
+.anchor-heading svg {
+  color: #1e6e3d !important;
+  fill: #1e6e3d !important;
+  stroke: #1e6e3d !important;
 }
 
 .main {
