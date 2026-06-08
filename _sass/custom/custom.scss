@@ -76,3 +76,13 @@ a:active {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+
+.side-bar ~ .main {
+  margin-left: 0;
+  
+  @media (min-width: 50rem) {
+    max-width: none !important;
+    // Override the default that restricts content width
+    width: calc(100% - var(--nav-width, 264px)) !important;
+  }
+}
