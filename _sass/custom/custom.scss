@@ -18,6 +18,14 @@ a {
   color: #1e6e3d !important;
 }
 
+// Override any visited/default purple link color
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #1e6e3d !important;
+}
+
 .nav-list-expander svg {
   color: #1e6e3d !important;
   fill: #1e6e3d !important;
