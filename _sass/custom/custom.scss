@@ -62,11 +62,9 @@ a:active {
 }
 
 .main-content-wrap {
-  width: calc(100vw - 260px) !important;
   max-width: none !important;
-  margin-left: 260px !important;
-  margin-right: 0 !important;
-  margin-top: 0 !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .main-content {
